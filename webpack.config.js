@@ -8,6 +8,9 @@ module.exports = {
     path: __dirname + "/public",
     filename: "index.js"
   },
+  resolve: {
+    root: __dirname + "/src"
+  },
   devtool: "source-map",
   module: {
     loaders: [
