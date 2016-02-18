@@ -4,6 +4,6 @@ root = true
 charset = utf-8
 
 
-[*.html]
+[*.{html,js}]
 indent_style = space
 indent_size = 2
