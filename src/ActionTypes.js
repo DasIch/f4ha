@@ -1,0 +1,3 @@
+const ADD_CANDIDATE = "ADD_CANDIDATE"
+
+export default { ADD_CANDIDATE }
