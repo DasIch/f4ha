@@ -13,7 +13,7 @@ class App extends Component {
     const wordLength = candidates.length > 0 ? candidates[0].word.length : undefined
     return (
       <div>
-        <WordInput length={wordLength} addCandidate={actions.addCandidate} />
+        <WordInput length={wordLength} save={actions.addCandidate} />
         <PasswordCandidateList candidates={candidates} />
       </div>
     )

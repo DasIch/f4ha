@@ -7,7 +7,7 @@ import WordInput from "components/WordInput"
 
 describe("WordInput", () => {
   it("renders input", () => {
-    const wrapper = shallow(<WordInput addCandidate={sinon.spy()} />)
+    const wrapper = shallow(<WordInput save={sinon.spy()} />)
     expect(wrapper.find("input")).to.have.length(1)
   })
 })
