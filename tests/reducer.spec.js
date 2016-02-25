@@ -15,7 +15,7 @@ describe("reducer", () => {
     const expectedState = {
       hacking: false,
       candidates: [
-        { id: 1, word: "hello" }
+        { id: 1, word: "hello", isExcluded: false }
       ]
     }
     expect(nextState).to.eql(expectedState)
@@ -62,7 +62,29 @@ describe("reducer", () => {
     const expectedState = {
       hacking: true,
       candidates: [
-        { id: 1, word: "hello", likeness: 2 }
+        { id: 1, word: "hello", likeness: 2, isExcluded: true }
+      ]
+    }
+    expect(nextState).to.eql(expectedState)
+  })
+
+  it("should exclude on SET_LIKENESS", () => {
+    const previousState = {
+      hacking: true,
+      candidates: [
+        { id: 1, word: "abc", isExcluded: false },
+        { id: 2, word: "abb", isExcluded: false },
+        { id: 3, word: "acc", isExcluded: false }
+      ]
+    }
+    const action = actions.setLikeness(3, 2)
+    const nextState = reducer(previousState, action)
+    const expectedState = {
+      hacking: true,
+      candidates: [
+        { id: 1, word: "abc", isExcluded: false },
+        { id: 2, word: "abb", isExcluded: true },
+        { id: 3, word: "acc", isExcluded: true, likeness: 2 }
       ]
     }
     expect(nextState).to.eql(expectedState)
