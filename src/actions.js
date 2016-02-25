@@ -9,4 +9,12 @@ const toggleHacking = () => {
   return { type: ActionTypes.TOGGLE_HACKING }
 }
 
-export default { addCandidate, toggleHacking }
+const setLikeness = (candidateId, likeness) => {
+  return {
+    type: ActionTypes.SET_LIKENESS,
+    candidateId: candidateId,
+    likeness: likeness
+  }
+}
+
+export default { addCandidate, toggleHacking, setLikeness }

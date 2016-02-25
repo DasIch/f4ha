@@ -22,6 +22,18 @@ const reducer = (state = initialState, action) => {
           hacking: !state.hacking
         })
       }
+    case ActionTypes.SET_LIKENESS:
+      return Object.assign({}, state, {
+        candidates: state.candidates.map((candidate) => {
+          if (candidate.id === action.candidateId) {
+            return Object.assign({}, candidate, {
+              likeness: action.likeness
+            })
+          } else {
+            return candidate
+          }
+        })
+      })
     default:
       return state
   }

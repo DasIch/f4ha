@@ -49,4 +49,22 @@ describe("reducer", () => {
     const expectedState = { hacking: false, candidates: [] }
     expect(nextState).to.eql(expectedState)
   })
+
+  it("handles SET_LIKENESS", () => {
+    const previousState = {
+      hacking: true,
+      candidates: [
+        { id: 1, word: "hello" }
+      ]
+    }
+    const action = actions.setLikeness(1, 2)
+    const nextState = reducer(previousState, action)
+    const expectedState = {
+      hacking: true,
+      candidates: [
+        { id: 1, word: "hello", likeness: 2 }
+      ]
+    }
+    expect(nextState).to.eql(expectedState)
+  })
 })
