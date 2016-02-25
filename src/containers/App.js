@@ -9,11 +9,13 @@ import actions from "actions"
 
 class App extends Component {
   render() {
-    const { candidates, actions } = this.props
+    const { hacking, candidates, actions } = this.props
     const wordLength = candidates.length > 0 ? candidates[0].word.length : undefined
     return (
       <div>
-        <WordInput length={wordLength} save={actions.addCandidate} />
+        <WordInput disabled={hacking}
+                   length={wordLength}
+                   save={actions.addCandidate} />
         <PasswordCandidateList candidates={candidates} />
       </div>
     )

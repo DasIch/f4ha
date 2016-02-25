@@ -22,10 +22,12 @@ export default class WordInput extends AbstractInput {
       minLength: length,
       maxLength: length,
       required: "required",
-      autoFocus: "autofocus"
+      autoFocus: "autofocus",
+      disabled: this.props.disabled
     })
   }
 }
 WordInput.propTypes = Object.assign({}, AbstractInput.propTypes, {
-  length: PropTypes.number
+  length: PropTypes.number,
+  disabled: PropTypes.bool
 })
