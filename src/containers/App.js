@@ -13,8 +13,12 @@ class App extends Component {
     const wordLength = candidates.length > 0 ? candidates[0].word.length : undefined
     return (
       <div>
-        <Header hacking={hacking} length={wordLength} actions={actions} />
-        <PasswordCandidateList candidates={candidates} />
+        <Header hacking={hacking}
+                length={wordLength}
+                actions={actions} />
+        <PasswordCandidateList hacking={hacking}
+                               candidates={candidates}
+                               actions={actions} />
       </div>
     )
   }

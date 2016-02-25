@@ -8,7 +8,10 @@ export default class PasswordCandidateList extends Component {
     return (
       <div>
         {this.props.candidates.map(candidate =>
-          <PasswordCandidate key={candidate.id} {...candidate} />
+          <PasswordCandidate key={candidate.id}
+                             hacking={this.props.hacking}
+                             actions={this.props.actions}
+                             {...candidate} />
         )}
       </div>
     )
