@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import { bindActionCreators } from "redux"
 import { connect } from "react-redux"
 
-import WordInput from "components/WordInput"
+import Header from "components/Header"
 import PasswordCandidateList from "components/PasswordCandidateList"
 import actions from "actions"
 
@@ -13,9 +13,7 @@ class App extends Component {
     const wordLength = candidates.length > 0 ? candidates[0].word.length : undefined
     return (
       <div>
-        <WordInput disabled={hacking}
-                   length={wordLength}
-                   save={actions.addCandidate} />
+        <Header hacking={hacking} length={wordLength} actions={actions} />
         <PasswordCandidateList candidates={candidates} />
       </div>
     )
