@@ -5,4 +5,8 @@ const addCandidate = (word) => {
   return { type: ActionTypes.ADD_CANDIDATE, word: word }
 }
 
-export default { addCandidate }
+const toggleHacking = () => {
+  return { type: ActionTypes.TOGGLE_HACKING }
+}
+
+export default { addCandidate, toggleHacking }

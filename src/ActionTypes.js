@@ -1,3 +1,4 @@
 const ADD_CANDIDATE = "ADD_CANDIDATE"
+const TOGGLE_HACKING = "TOGGLE_HACKING"
 
-export default { ADD_CANDIDATE }
+export default { ADD_CANDIDATE, TOGGLE_HACKING }
