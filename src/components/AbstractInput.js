@@ -11,6 +11,10 @@ export default class AbstractInput extends Component {
     }
   }
 
+  convert(rawValue) {
+    return rawValue
+  }
+
   isValid(value) {
     return true
   }
@@ -21,7 +25,14 @@ export default class AbstractInput extends Component {
 
   handleSubmit(event) {
     if (event.keyCode === ENTER_KEY_CODE) {
-      const value = this.state.value.trim()
+      const rawValue = this.state.value.trim()
+      let value
+      try {
+        value = this.convert(rawValue)
+      } catch (error) {
+        console.error(error.message)
+        return
+      }
       if (this.isValid(value)) {
         this.props.save(value)
         this.setState({ value: "" })
