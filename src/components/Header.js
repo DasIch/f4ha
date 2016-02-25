@@ -9,7 +9,7 @@ export default class Header extends Component {
     return (
       <div>
         <WordInput disabled={this.props.hacking}
-                   length={this.props.wordLength}
+                   length={this.props.length}
                    save={this.props.actions.addCandidate} />
         <ControlButton hacking={this.props.hacking}
                        toggleHacking={this.props.actions.toggleHacking} />
@@ -19,5 +19,5 @@ export default class Header extends Component {
 }
 Header.propTypes = {
   hacking: PropTypes.bool.isRequired,
-  length: PropTypes.number.isRequired
+  length: PropTypes.number
 }
